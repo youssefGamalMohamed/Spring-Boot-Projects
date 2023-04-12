@@ -1,8 +1,8 @@
 package com.app.todoapp.exception.handler;
 
 
-import com.app.todoapp.models.response.BadRequestResponse;
-import com.app.todoapp.models.response.InternalServerResponse;
+import com.app.todoapp.models.response.error.BadRequestResponse;
+import com.app.todoapp.models.response.error.InternalServerResponse;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;

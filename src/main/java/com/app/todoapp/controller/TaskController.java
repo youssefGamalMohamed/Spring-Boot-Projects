@@ -1,10 +1,11 @@
 package com.app.todoapp.controller;
 
-import com.app.todoapp.entity.Task;
 import com.app.todoapp.enums.Status;
 import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.request.TaskRequestBody;
-import com.app.todoapp.models.response.*;
+import com.app.todoapp.models.response.error.BadRequestResponse;
+import com.app.todoapp.models.response.error.InternalServerResponse;
+import com.app.todoapp.models.response.success.*;
 import com.app.todoapp.service.framework.ITaskService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -17,7 +18,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController

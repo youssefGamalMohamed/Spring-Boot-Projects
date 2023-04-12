@@ -3,10 +3,10 @@ package com.app.todoapp.controller;
 import com.app.todoapp.entity.User;
 import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.request.UserRequestBody;
-import com.app.todoapp.models.response.AddUserResponseBody;
-import com.app.todoapp.models.response.BadRequestResponse;
-import com.app.todoapp.models.response.DeleteUserResponseBody;
-import com.app.todoapp.models.response.InternalServerResponse;
+import com.app.todoapp.models.response.success.AddUserResponseBody;
+import com.app.todoapp.models.response.error.BadRequestResponse;
+import com.app.todoapp.models.response.success.DeleteUserResponseBody;
+import com.app.todoapp.models.response.error.InternalServerResponse;
 import com.app.todoapp.service.framework.IUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -18,8 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @RestController
 public class UserController {

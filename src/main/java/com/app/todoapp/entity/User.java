@@ -29,6 +29,12 @@ public class User {
     @Embedded
     private Name name;
 
+    @Column
+    private String email;
+
+    @Column
+    private String password;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -1,4 +1,4 @@
-package com.app.todoapp.models.response;
+package com.app.todoapp.models.response.success;
 
 
 import com.app.todoapp.entity.Task;

@@ -5,7 +5,7 @@ import com.app.todoapp.entity.User;
 import com.app.todoapp.enums.Status;
 import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.request.TaskRequestBody;
-import com.app.todoapp.models.response.*;
+import com.app.todoapp.models.response.success.*;
 import com.app.todoapp.repository.TaskRepo;
 import com.app.todoapp.repository.UserRepo;
 import com.app.todoapp.service.framework.ITaskService;

@@ -1,4 +1,4 @@
-package com.app.todoapp.models.response;
+package com.app.todoapp.models.response.error;
 
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Schema;
