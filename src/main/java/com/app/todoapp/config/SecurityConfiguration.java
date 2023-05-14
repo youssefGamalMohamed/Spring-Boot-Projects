@@ -27,13 +27,15 @@ public class SecurityConfiguration {
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
+
+    private final String[] whiteListEndPoints = { "/auth/**" , "/swagger-ui/**" , "/v3/api-docs/**"};
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf()
                 .disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/**")
+                .requestMatchers(whiteListEndPoints)
                 .permitAll()
                 .anyRequest()
                 .authenticated()
