@@ -1,14 +1,14 @@
-package com.app.todoapp.models.response.success;
+package com.app.todoapp.models.response.other.success;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@Builder
 @Data
+@Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class AssignTaskToUserResponseBody {
-    private boolean assigning_status;
+public class AddTaskResponseBody {
+    private Long id;
 }

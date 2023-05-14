@@ -1,15 +1,14 @@
-package com.app.todoapp.models.response.success;
-
+package com.app.todoapp.models.response.other.success;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@RequiredArgsConstructor
 @Builder
-public class DeleteUserResponseBody {
+@RequiredArgsConstructor
+@AllArgsConstructor
+@Data
+public class DeleteTaskResponseBody {
     private boolean deletion_status;
 }

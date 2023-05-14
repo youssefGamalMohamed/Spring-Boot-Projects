@@ -1,28 +1,18 @@
 package com.app.todoapp.controller.impl;
 
-import com.app.todoapp.controller.framework.ITaskControllerInterface;
+import com.app.todoapp.controller.framework.ITaskController;
 import com.app.todoapp.enums.Status;
 import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.request.TaskRequestBody;
-import com.app.todoapp.models.response.error.BadRequestResponse;
-import com.app.todoapp.models.response.error.InternalServerResponse;
-import com.app.todoapp.models.response.success.*;
 import com.app.todoapp.service.framework.ITaskService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
-public class TaskController implements ITaskControllerInterface {
+public class TaskController implements ITaskController {
 
     @Autowired
     private ITaskService taskService;
@@ -31,7 +21,7 @@ public class TaskController implements ITaskControllerInterface {
     @PostMapping("/task")
     public ResponseEntity<?> addTask(@RequestBody @Valid TaskRequestBody taskRequestBody) {
         return new ResponseEntity<>(
-                taskService.addTask(taskRequestBody) , HttpStatus.OK
+                taskService.addTask(taskRequestBody) , HttpStatus.CREATED
         );
     }
 
@@ -40,7 +30,7 @@ public class TaskController implements ITaskControllerInterface {
     public ResponseEntity<?> deleteTaskById(@PathVariable(name = "id") Long taskId) throws IdNotFoundException {
         return new ResponseEntity<>(
                 taskService.deleteTaskWithId(taskId),
-                HttpStatus.OK
+                HttpStatus.NOT_FOUND
         );
     }
 

@@ -1,4 +1,4 @@
-package com.app.todoapp.models.response.error;
+package com.app.todoapp.models.response.http;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

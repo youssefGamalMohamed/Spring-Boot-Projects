@@ -1,4 +1,4 @@
-package com.app.todoapp.models.response.error;
+package com.app.todoapp.models.response.other.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -3,9 +3,9 @@ package com.app.todoapp.controller.framework;
 import com.app.todoapp.enums.Status;
 import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.request.TaskRequestBody;
-import com.app.todoapp.models.response.error.BadRequestResponse;
-import com.app.todoapp.models.response.error.InternalServerResponse;
-import com.app.todoapp.models.response.success.*;
+import com.app.todoapp.models.response.http.BadRequestResponse;
+import com.app.todoapp.models.response.http.InternalServerResponse;
+import com.app.todoapp.models.response.other.success.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-public interface ITaskControllerInterface {
+public interface ITaskController {
 
 
     @Operation(summary = "Add New Task")

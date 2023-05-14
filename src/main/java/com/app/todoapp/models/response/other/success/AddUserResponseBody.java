@@ -1,4 +1,4 @@
-package com.app.todoapp.models.response.success;
+package com.app.todoapp.models.response.other.success;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
