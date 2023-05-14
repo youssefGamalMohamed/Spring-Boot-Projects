@@ -1,4 +1,4 @@
-package com.app.todoapp.controller;
+package com.app.todoapp.controller.impl;
 
 import com.app.todoapp.entity.User;
 import com.app.todoapp.exception.models.IdNotFoundException;

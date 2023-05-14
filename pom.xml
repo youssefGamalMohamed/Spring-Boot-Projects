@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.app</groupId>
     <artifactId>TodoApp</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>TodoApp</name>
     <description>TodoApp</description>
     <properties>
@@ -106,6 +106,24 @@
         </dependency>
         <!-- End of Security-->
     </dependencies>
+    <profiles>
+        <profile>
+            <id>home</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <springProfile>home</springProfile>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>intercom</id>
+            <properties>
+                <springProfile>intercom</springProfile>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
