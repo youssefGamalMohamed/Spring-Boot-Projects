@@ -1,6 +1,8 @@
 package com.app.todoapp.exception.models;
 
-public class IdNotFoundException extends Exception {
+import java.util.NoSuchElementException;
+
+public class IdNotFoundException extends NoSuchElementException {
     public IdNotFoundException() {
     }
 

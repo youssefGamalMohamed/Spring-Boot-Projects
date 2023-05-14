@@ -36,19 +36,20 @@ public class UserService implements IUserService {
 
     @Override
     public User getUserById(Long id) throws IdNotFoundException {
-        if(!userRepo.existsById(id))
-            throw new IdNotFoundException("user id not found");
-
-        return userRepo.findById(id).get();
+        return userRepo.findById(id)
+                .orElseThrow(() -> new IdNotFoundException("user id not found"));
     }
 
     @Override
     public DeleteUserResponseBody deleteUserById(Long id) throws IdNotFoundException {
         if(!userRepo.existsById(id))
             throw new IdNotFoundException("user id not found");
+
         userRepo.deleteById(id);
 
-        return DeleteUserResponseBody.builder().deletion_status(true).build();
+        return DeleteUserResponseBody.builder()
+                .deletion_status(true)
+                .build();
     }
 
 

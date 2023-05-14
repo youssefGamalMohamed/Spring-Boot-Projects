@@ -34,7 +34,10 @@ public class TaskService implements ITaskService {
 
 
         taskRepo.save(task);
-        return AddTaskResponseBody.builder().id(task.getId()).build();
+
+        return AddTaskResponseBody.builder()
+                .id(task.getId())
+                .build();
     }
 
     @Override
@@ -43,15 +46,16 @@ public class TaskService implements ITaskService {
             throw new IdNotFoundException("task id not found to delete");
 
         taskRepo.deleteById(taskId);
-        return DeleteTaskResponseBody.builder().deletion_status(true).build();
+
+        return DeleteTaskResponseBody.builder()
+                .deletion_status(true)
+                .build();
     }
 
     @Override
     public UpdateTaskResponseBody updateTaskWithId(Long taskId, TaskRequestBody taskRequestBody) throws IdNotFoundException {
-        if(!taskRepo.existsById(taskId))
-            throw new IdNotFoundException("task id not found to update");
 
-        Task task = taskRepo.findById(taskId).get();
+        Task task = taskRepo.findById(taskId).orElseThrow(() -> new IdNotFoundException("task id not found to update"));
         task.setSubject(taskRequestBody.getSubject());
         task.setDescription(taskRequestBody.getDescription());
 
@@ -74,15 +78,14 @@ public class TaskService implements ITaskService {
 
     @Override
     public AssignTaskToUserResponseBody addTaskToUser(Long userId, Long taskId) throws IdNotFoundException {
-        if(!userRepo.existsById(userId))
-            throw new IdNotFoundException("user id not found");
-        if(!taskRepo.existsById(taskId))
-            throw new IdNotFoundException("task id not found");
 
-        Task task = taskRepo.findById(taskId).get();
-        User user = userRepo.findById(userId).get();
+        Task task = taskRepo.findById(taskId).orElseThrow(() -> new IdNotFoundException("task id not found"));
+        User user = userRepo.findById(userId).orElseThrow(() -> new IdNotFoundException("user id not found"));
+
         task.setUser(user);
+
         taskRepo.save(task);
+
         return AssignTaskToUserResponseBody.builder()
                 .assigning_status(true)
                 .build();
