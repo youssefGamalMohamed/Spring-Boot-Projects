@@ -4,6 +4,8 @@ import com.app.todoapp.models.request.LoginRequestBody;
 import com.app.todoapp.models.request.RegisterRequestBody;
 import com.app.todoapp.models.response.http.BadRequestResponse;
 import com.app.todoapp.models.response.http.InternalServerResponse;
+import com.app.todoapp.models.response.http.UnAuthorizedResponse;
+import com.app.todoapp.models.response.other.success.LoginResponseBody;
 import com.app.todoapp.models.response.other.success.RegisterResponseBody;
 import com.app.todoapp.models.response.other.success.UpdateTaskResponseBody;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,7 +43,16 @@ public interface IAuthenticationController {
                             content = {
                                     @Content(
                                             mediaType = "application/json",
-                                            schema = @Schema(implementation = LoginRequestBody.class)
+                                            schema = @Schema(implementation = LoginResponseBody.class)
+                                    )
+                            }
+                    ),
+                    @ApiResponse(
+                            responseCode = "401", description = "Failed to Login",
+                            content = {
+                                    @Content(
+                                            mediaType = "application/json",
+                                            schema = @Schema(implementation = UnAuthorizedResponse.class)
                                     )
                             }
                     )

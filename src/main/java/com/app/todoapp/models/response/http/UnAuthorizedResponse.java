@@ -12,6 +12,6 @@ import lombok.RequiredArgsConstructor;
 @Builder
 public class UnAuthorizedResponse {
     // as an example
-    @Schema(type = "string" , example = "Invalid Username or Password")
+    @Schema(type = "string" , example = "Failed to Login Invalid Username or Password")
     private String message;
 }
