@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZb3Vzc2VmR2FtYWxAZ21haWwuY29tIiwiaWF0IjoxNjg0MDc1MDUwLCJleHAiOjE2ODQwNzY0OTB9.Axf7iOjeM6DQW8VxhDZX2GjgfS5_fZIWx5wlux_9lFo",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJZb3Vzc2VmR2FtYWxAZ21haWwuY29tIiwiaWF0IjoxNjg0MTQzMjY0LCJleHAiOjE2ODQxNDQ3MDR9.W0baplICWxIbaEgZ2OVKrQ3Z48OqctqOlmGlxoLCorY",
 									"type": "string"
 								}
 							]
@@ -34,13 +34,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8081/backend/api/v1/todo/task",
+							"raw": "localhost:8081/api/v1/todo/task",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"backend",
 								"api",
 								"v1",
 								"todo",
@@ -78,13 +77,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8081/backend/api/v1/todo/task?status=COMPLETED",
+							"raw": "localhost:8081/api/v1/todo/task?status=COMPLETED",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"backend",
 								"api",
 								"v1",
 								"todo",
@@ -230,13 +228,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8081/backend/api/v1/todo/auth/register",
+							"raw": "localhost:8081/api/v1/todo/auth/register",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"backend",
 								"api",
 								"v1",
 								"todo",
@@ -262,13 +259,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:8081/backend/api/v1/todo/auth/login",
+							"raw": "localhost:8081/api/v1/todo/auth/login",
 							"host": [
 								"localhost"
 							],
 							"port": "8081",
 							"path": [
-								"backend",
 								"api",
 								"v1",
 								"todo",
