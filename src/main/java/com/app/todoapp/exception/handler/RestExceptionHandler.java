@@ -1,12 +1,17 @@
 package com.app.todoapp.exception.handler;
 
 
+import com.app.todoapp.exception.models.IdNotFoundException;
 import com.app.todoapp.models.response.http.BadRequestResponse;
 import com.app.todoapp.models.response.http.InternalServerResponse;
+import com.app.todoapp.models.response.http.UnAuthorizedResponse;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -67,8 +72,24 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
 
+    @ExceptionHandler({ AuthenticationException.class })
+    public ResponseEntity<?> handleAuthenticationException(Exception exception) {
+        return new ResponseEntity<>(
+                UnAuthorizedResponse.builder()
+                        .message("Wrong Username/Email or Password")
+                        .build()
+                , HttpStatus.UNAUTHORIZED
+        );
+    }
 
-
-
+    @ExceptionHandler({ IdNotFoundException.class })
+    public ResponseEntity<?> handleIdNotFoundException(IdNotFoundException exception) {
+        return new ResponseEntity<>(
+                InternalServerResponse.builder()
+                        .message(exception.getMessage())
+                        .build()
+                , HttpStatus.NOT_FOUND
+        );
+    }
 
 }

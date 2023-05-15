@@ -10,9 +10,8 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
-public class InternalServerResponse {
-
+public class UnAuthorizedResponse {
     // as an example
-    @Schema(type = "string" , example = "Internal Server Error")
+    @Schema(type = "string" , example = "Invalid Username or Password")
     private String message;
 }
