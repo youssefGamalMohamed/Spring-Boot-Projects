@@ -110,7 +110,7 @@
         </dependency>
         <!-- End of Security-->
     </dependencies>
-    <profiles>
+   <!--<profiles>
         <profile>
             <id>home</id>
             <activation>
@@ -127,7 +127,7 @@
                 <springProfile>intercom</springProfile>
             </properties>
         </profile>
-    </profiles>
+    </profiles> -->
 
     <build>
         <plugins>
